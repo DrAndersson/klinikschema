@@ -12,7 +12,6 @@ const swedishMonths = ['Januari','Februari','Mars','April','Maj','Juni','Juli','
 let currentMonth = 0, currentYear = 2026, selected = null, bulkActive = false;
 const bulkSelection = new Set();
 let schedule = JSON.parse(localStorage.getItem('kirurgschemat-schedule') || 'null') || {};
-let holidays = JSON.parse(localStorage.getItem('kirurgschemat-holidays') || 'null') || {};
 let calls = JSON.parse(localStorage.getItem('kirurgschemat-calls-v2') || 'null') || [];
 const key = (date, initials) => `${date}-${initials}`;
 function daysInMonth() { return new Date(currentYear, currentMonth + 1, 0).getDate(); }
@@ -34,12 +33,12 @@ function statutoryHolidayName(dateString) {
   if ((month === 9 && day === 31 && weekday === 6) || (month === 10 && weekday === 6 && day <= 6)) return 'Alla helgons dag';
   return '';
 }
-function isHolidayDate(date) { return Boolean(holidays[date] || statutoryHolidayName(date)); }
+function isHolidayDate(date) { return Boolean(statutoryHolidayName(date)); }
 function isWeekday(date) { const weekday = new Date(`${date}T12:00:00`).getDay(); return weekday !== 0 && weekday !== 6; }
 function defaultItem(date) { return { activity: isWeekday(date) && !isHolidayDate(date) ? 'clinic' : '', halfDay:null, unavailable:false, wantsCall:false }; }
 function activityText(item) { return item.halfDay ? `${activities[item.halfDay.morning][1]}/${activities[item.halfDay.afternoon][1]}` : item.activity ? activities[item.activity][1] : ''; }
 function activityStyle(item) { return item.halfDay ? ` style="--morning:${activityColors[item.halfDay.morning]};--afternoon:${activityColors[item.halfDay.afternoon]}"` : ''; }
-function persist() { localStorage.setItem('kirurgschemat-schedule', JSON.stringify(schedule)); localStorage.setItem('kirurgschemat-holidays', JSON.stringify(holidays)); localStorage.setItem('kirurgschemat-calls-v2', JSON.stringify(calls)); document.querySelector('#save-state').textContent = 'Sparat lokalt'; }
+function persist() { localStorage.setItem('kirurgschemat-schedule', JSON.stringify(schedule)); localStorage.setItem('kirurgschemat-calls-v2', JSON.stringify(calls)); document.querySelector('#save-state').textContent = 'Sparat lokalt'; }
 function render() {
   document.querySelector('#month-label').textContent = `${swedishMonths[currentMonth]} ${currentYear}`;
   document.querySelector('#schedule-head').innerHTML = `<tr><th class="day-head">Datum</th>${staff.map(p => `<th class="person" title="${p.name}">${p.initials}</th>`).join('')}</tr>`;
@@ -121,11 +120,9 @@ function openActivity(date, initials) {
   document.querySelector('#morning-select').innerHTML = selectOptions; document.querySelector('#afternoon-select').innerHTML = selectOptions;
   document.querySelector('#morning-select').value = morning; document.querySelector('#afternoon-select').value = afternoon;
   document.querySelector('#split-day-checkbox').checked = Boolean(item.halfDay); document.querySelector('#split-options').hidden = !item.halfDay;
-  const automaticHoliday = statutoryHolidayName(date);
-  document.querySelector('#holiday-checkbox').checked = isHolidayDate(date); document.querySelector('#holiday-checkbox').disabled = Boolean(automaticHoliday); document.querySelector('#holiday-checkbox').title = automaticHoliday ? `${automaticHoliday} markeras automatiskt` : '';
   document.querySelector('#wants-call-checkbox').checked = item.wantsCall; document.querySelector('#unavailable-checkbox').checked = item.unavailable; document.querySelector('#activity-dialog').showModal();
 }
-document.querySelector('#save-activity').addEventListener('click', event => { event.preventDefault(); const activity = document.querySelector('input[name="activity"]:checked').value, unavailable = document.querySelector('#unavailable-checkbox').checked, split = document.querySelector('#split-day-checkbox').checked; if (!statutoryHolidayName(selected.date)) holidays[selected.date] = document.querySelector('#holiday-checkbox').checked; schedule[key(selected.date,selected.initials)] = {activity:split ? '' : activity, halfDay:split ? {morning:document.querySelector('#morning-select').value, afternoon:document.querySelector('#afternoon-select').value} : null, unavailable, wantsCall:document.querySelector('#wants-call-checkbox').checked && !unavailable}; document.querySelector('#activity-dialog').close(); persist(); render(); });
+document.querySelector('#save-activity').addEventListener('click', event => { event.preventDefault(); const activity = document.querySelector('input[name="activity"]:checked').value, unavailable = document.querySelector('#unavailable-checkbox').checked, split = document.querySelector('#split-day-checkbox').checked; schedule[key(selected.date,selected.initials)] = {activity:split ? '' : activity, halfDay:split ? {morning:document.querySelector('#morning-select').value, afternoon:document.querySelector('#afternoon-select').value} : null, unavailable, wantsCall:document.querySelector('#wants-call-checkbox').checked && !unavailable}; document.querySelector('#activity-dialog').close(); persist(); render(); });
 document.querySelector('#split-day-checkbox').addEventListener('change', event => { document.querySelector('#split-options').hidden = !event.target.checked; });
 document.querySelector('#wants-call-checkbox').addEventListener('change', event => { if (event.target.checked) document.querySelector('#unavailable-checkbox').checked = false; });
 document.querySelector('#unavailable-checkbox').addEventListener('change', event => { if (event.target.checked) document.querySelector('#wants-call-checkbox').checked = false; });

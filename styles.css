@@ -17,7 +17,6 @@ dialog { width:min(440px,calc(100% - 28px)); border:0; padding:0; border-radius:
 .requested-key { color:#fff; background:#17735f; border-radius:4px; width:16px; height:16px; display:grid; place-items:center; font-weight:800; }
 .desired-dot { position:absolute; left:6px; top:5px; z-index:2; background:#17735f; color:#fff; width:15px; height:15px; display:grid; place-items:center; border-radius:4px; font-size:11px; font-weight:800; box-shadow:0 1px 2px #0002; }
 .requested-option { display:flex; gap:8px; align-items:center; background:#eff8f3; color:#17634f; border-radius:7px; padding:10px; font-size:12px; font-weight:700; margin:12px 0; }
-.holiday-option { display:flex; gap:8px; align-items:center; background:#fff3f4; color:#8e3b45; border-radius:7px; padding:10px; font-size:12px; font-weight:700; margin:12px 0; }.holiday-option span { color:#a1767c; font-weight:600; }
 .split-option { display:flex; gap:8px; align-items:center; background:#f2f5f3; color:#35564b; border-radius:7px; padding:10px; font-size:12px; font-weight:700; margin:12px 0; }.split-option span { color:#73877e; font-weight:600; }
 .split-options { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin:10px 0 14px; }.split-options label { color:#61736b; font-size:11px; font-weight:800; }.split-options select { display:block; margin-top:5px; width:100%; border:1px solid #cad6ce; border-radius:7px; padding:8px; color:var(--ink); background:#fff; }
 .activity-button.split { background:linear-gradient(90deg,var(--morning) 0 50%,var(--afternoon) 50% 100%); }
