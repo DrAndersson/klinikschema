@@ -38,6 +38,60 @@ function isWeekday(date) { const weekday = new Date(`${date}T12:00:00`).getDay()
 function defaultItem(date) { return { activity: isWeekday(date) && !isHolidayDate(date) ? 'clinic' : '', halfDay:null, unavailable:false, wantsCall:false }; }
 function activityText(item) { return item.halfDay ? `${activities[item.halfDay.morning][1]}/${activities[item.halfDay.afternoon][1]}` : item.activity ? activities[item.activity][1] : ''; }
 function activityStyle(item) { return item.halfDay ? ` style="--morning:${activityColors[item.halfDay.morning]};--afternoon:${activityColors[item.halfDay.afternoon]}"` : ''; }
+function excelColor(color) { return `FF${color.replace('#', '').toUpperCase()}`; }
+function excelCellStyle(fill = 'FFFFFFFF', alignment = { horizontal:'center', vertical:'center', wrapText:true }, bold = false) {
+  return { font:{ name:'Arial', sz:10, bold, color:{ rgb: bold && fill === 'FF19322B' ? 'FFFFFFFF' : 'FF19322B' } }, fill:{ patternType:'solid', fgColor:{ rgb:fill } }, alignment, border:{ top:{style:'thin',color:{rgb:'FFDCE5DF'}}, bottom:{style:'thin',color:{rgb:'FFDCE5DF'}}, left:{style:'thin',color:{rgb:'FFDCE5DF'}}, right:{style:'thin',color:{rgb:'FFDCE5DF'}} } };
+}
+function exportSchedule() {
+  if (!window.XLSX) { window.alert('Excel-exporten kunde inte laddas. Kontrollera internetanslutningen och försök igen.'); return; }
+  const workbook = XLSX.utils.book_new(), rows = [], title = `Jourschema Hand- och plastikkirurgiska kliniken`, monthTitle = `${swedishMonths[currentMonth]} ${currentYear}`;
+  rows.push([title], [monthTitle], [], ['Datum', ...staff.map(person => person.initials)]);
+  const weekdays = ['Sön','Mån','Tis','Ons','Tor','Fre','Lör'];
+  for (let day = 1; day <= daysInMonth(); day++) {
+    const date = iso(day), weekday = new Date(`${date}T12:00:00`).getDay();
+    rows.push([`${String(day).padStart(2,'0')} ${weekdays[weekday]}${isHolidayDate(date) ? ` · ${statutoryHolidayName(date)}` : ''}`, ...staff.map(person => {
+      const item = schedule[key(date, person.initials)] || defaultItem(date);
+      return `${activityText(item)}${item.wantsCall ? '\n✓ Önskar jour' : ''}${item.unavailable ? '\n× Ej tillgänglig' : ''}`.trim();
+    })]);
+  }
+  const dutyStart = rows.length + 2;
+  rows.push([], ['Jourbemanning'], ['Datum', 'Primärjour', 'Bakjour']);
+  for (let day = 1; day <= daysInMonth(); day++) {
+    const date = iso(day), call = calls.find(item => item.date === date);
+    rows.push([`${displayDate(date)}${isHolidayDate(date) ? ` · ${statutoryHolidayName(date)}` : ''}`, call?.primary || 'Ej bemannad', call?.backup || 'Ej bemannad']);
+  }
+  const legendStart = rows.length + 2;
+  rows.push([], ['Förklaring'], ['K', 'Klinik'], ['AS', 'Annat sjukhus'], ['F', 'Forskning'], ['Kurs', 'Kurs'], ['Adm', 'Administration'], ['L', 'Ledig'], ['R', 'Randning'], ['✓', 'Önskar jour'], ['×', 'Ej tillgänglig för jour']);
+  const sheet = XLSX.utils.aoa_to_sheet(rows);
+  const lastColumn = XLSX.utils.encode_col(staff.length);
+  sheet['!merges'] = [{ s:{r:0,c:0}, e:{r:0,c:staff.length} }, { s:{r:dutyStart - 1,c:0}, e:{r:dutyStart - 1,c:2} }, { s:{r:legendStart - 1,c:0}, e:{r:legendStart - 1,c:1} }];
+  sheet['!cols'] = [{wch:27}, ...staff.map(() => ({wch:14}))];
+  sheet['!rows'] = [{hpt:24}, {hpt:18}, {hpt:8}, ...Array.from({length:daysInMonth()}, () => ({hpt:32}))];
+  sheet['!pageSetup'] = { orientation:'landscape', fitToWidth:1, fitToHeight:0, paperSize:9 };
+  sheet['!margins'] = { left:0.25, right:0.25, top:0.45, bottom:0.45, header:0.2, footer:0.2 };
+  sheet['!printArea'] = `A1:${lastColumn}${dutyStart - 1}`;
+  sheet.A1.s = excelCellStyle('FF19322B', {horizontal:'left',vertical:'center'}, true);
+  sheet.A2.s = { font:{name:'Arial',sz:11,bold:true,color:{rgb:'FF65756F'}}, alignment:{horizontal:'left'} };
+  for (let column = 0; column <= staff.length; column++) sheet[`${XLSX.utils.encode_col(column)}4`].s = excelCellStyle('FFF3CA37', {horizontal:column === 0 ? 'left' : 'center',vertical:'center',wrapText:true}, true);
+  for (let day = 1; day <= daysInMonth(); day++) {
+    const row = day + 4, date = iso(day), weekday = new Date(`${date}T12:00:00`).getDay(), weekend = weekday === 0 || weekday === 6, holiday = isWeekday(date) && isHolidayDate(date);
+    sheet[`A${row}`].s = excelCellStyle(holiday ? 'FFF5D9DC' : weekend ? 'FFFFF0C4' : 'FFFFFFFF', {horizontal:'left',vertical:'center',wrapText:true}, true);
+    staff.forEach((person, index) => {
+      const item = schedule[key(date, person.initials)] || defaultItem(date), activity = item.halfDay ? item.halfDay.morning : item.activity;
+      const fill = holiday ? 'FFF5D9DC' : weekend ? 'FFFFF0C4' : activity ? excelColor(activityColors[activity]) : 'FFFFFFFF';
+      sheet[`${XLSX.utils.encode_col(index + 1)}${row}`].s = excelCellStyle(fill);
+    });
+  }
+  const dutyTitleRow = dutyStart, dutyHeaderRow = dutyStart + 1;
+  sheet[`A${dutyTitleRow}`].s = excelCellStyle('FF19322B', {horizontal:'left',vertical:'center'}, true);
+  ['A','B','C'].forEach(column => { sheet[`${column}${dutyHeaderRow}`].s = excelCellStyle('FFF3CA37', {horizontal:column === 'A' ? 'left' : 'center',vertical:'center'}, true); });
+  for (let day = 1; day <= daysInMonth(); day++) ['A','B','C'].forEach(column => { sheet[`${column}${dutyHeaderRow + day}`].s = excelCellStyle('FFFFFFFF', {horizontal:column === 'A' ? 'left' : 'center',vertical:'center',wrapText:true}, column !== 'A'); });
+  const legendTitleRow = legendStart, legendFirstRow = legendStart + 1;
+  sheet[`A${legendTitleRow}`].s = excelCellStyle('FF19322B', {horizontal:'left',vertical:'center'}, true);
+  for (let row = legendFirstRow; row < legendFirstRow + 9; row++) { sheet[`A${row}`].s = excelCellStyle('FFF7F9F6', {horizontal:'center',vertical:'center'}, true); sheet[`B${row}`].s = excelCellStyle('FFFFFFFF', {horizontal:'left',vertical:'center'}); }
+  XLSX.utils.book_append_sheet(workbook, sheet, 'Jourschema');
+  XLSX.writeFile(workbook, `jourschema-${currentYear}-${String(currentMonth + 1).padStart(2,'0')}.xlsx`);
+}
 function persist() { localStorage.setItem('kirurgschemat-schedule', JSON.stringify(schedule)); localStorage.setItem('kirurgschemat-calls-v2', JSON.stringify(calls)); document.querySelector('#save-state').textContent = 'Sparat lokalt'; }
 function render() {
   document.querySelector('#month-label').textContent = `${swedishMonths[currentMonth]} ${currentYear}`;
@@ -129,6 +183,7 @@ document.querySelector('#split-day-checkbox').addEventListener('change', event =
 document.querySelector('#wants-call-checkbox').addEventListener('change', event => { if (event.target.checked) document.querySelector('#unavailable-checkbox').checked = false; });
 document.querySelector('#unavailable-checkbox').addEventListener('change', event => { if (event.target.checked) document.querySelector('#wants-call-checkbox').checked = false; });
 document.querySelector('#legend-toggle').addEventListener('click', () => { const panel=document.querySelector('#legend-panel'); panel.hidden=!panel.hidden; document.querySelector('#legend-toggle').textContent=panel.hidden?'Visa förklaring':'Dölj förklaring'; });
+document.querySelector('#export-schedule').addEventListener('click', exportSchedule);
 document.querySelector('#bulk-mode').addEventListener('click', () => { bulkActive = true; bulkSelection.clear(); updateBulkUI(); });
 document.querySelector('#cancel-bulk').addEventListener('click', () => { bulkActive = false; bulkSelection.clear(); render(); });
 document.querySelector('#apply-bulk').addEventListener('click', () => {
