@@ -92,9 +92,11 @@ function unavailableLabel(date, initials) {
   const item = schedule[key(date, initials)];
   return item?.activity === 'leave' || item?.halfDay?.morning === 'leave' || item?.halfDay?.afternoon === 'leave' ? 'ledig' : 'ej tillgänglig';
 }
+function wantsCall(date, initials) { return Boolean(schedule[key(date, initials)]?.wantsCall); }
 function fillCallSelect(selectId, date, selectedValue) {
   const select = document.querySelector(selectId);
-  select.innerHTML = '<option value="">Ej bemannad</option>' + staff.map(person => `<option value="${person.initials}" ${isUnavailable(date, person.initials) ? 'disabled' : ''}>${person.name} (${person.initials})${isUnavailable(date, person.initials) ? ` — ${unavailableLabel(date, person.initials)}` : ''}</option>`).join('');
+  const orderedStaff = [...staff].sort((a, b) => Number(wantsCall(date, b.initials)) - Number(wantsCall(date, a.initials)));
+  select.innerHTML = '<option value="">Ej bemannad</option>' + orderedStaff.map(person => `<option value="${person.initials}" ${isUnavailable(date, person.initials) ? 'disabled' : ''}>${person.name} (${person.initials})${isUnavailable(date, person.initials) ? ` — ${unavailableLabel(date, person.initials)}` : wantsCall(date, person.initials) ? ' — ✓ önskar jour' : ''}</option>`).join('');
   select.value = selectedValue || '';
 }
 function openCallDialog(date = iso(1)) {
