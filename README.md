@@ -31,3 +31,8 @@ pnpm run build
 
 Excel-filen skickas inte till någon server. All tolkning sker lokalt på användarens
 enhet.
+
+## Publicering
+
+Varje push till `main` bygger och publicerar automatiskt den statiska appen på
+<https://drandersson.github.io/klinikschema/> via GitHub Pages.

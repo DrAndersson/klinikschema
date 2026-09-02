@@ -1,0 +1,62 @@
+name: Publicera Jourkalender på GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta källkoden
+        uses: actions/checkout@v4
+
+      - name: Installera pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Installera Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: pnpm
+
+      - name: Installera beroenden
+        run: pnpm install --frozen-lockfile
+
+      - name: Testa jourschematolkningen
+        run: pnpm test
+
+      - name: Bygg GitHub Pages-versionen
+        run: pnpm run build:pages
+
+      - name: Förbered GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Ladda upp webbappen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages-dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publicera webbappen
+        id: deployment
+        uses: actions/deploy-pages@v4
