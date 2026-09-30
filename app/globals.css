@@ -82,6 +82,14 @@ h2 { margin-bottom: 0; font-size: 19px; letter-spacing: -0.6px; }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 17px; }
 .section-heading .step-label, .preview-heading .step-label { margin-bottom: 4px; }
 .file-types, .calendar-badge { display: inline-flex; padding: 5px 8px; border-radius: 6px; background: var(--teal-pale); color: var(--teal); font: 500 10px DM Mono, monospace; }
+.month-field { padding: 16px; border: 1px solid #c9d9d1; border-radius: 13px; background: #f5faf7; }
+.month-field [data-slot='native-select-wrapper'] { width: 100%; }
+.month-field select { height: 47px; border-color: #aec8bd; background: #fff; font-size: 14px; }
+.source-note { display: block; margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+.source-divider { position: relative; height: 33px; display: grid; place-items: center; color: #82918b; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; }
+.source-divider::before { content: ''; position: absolute; inset: 50% 0 auto; height: 1px; background: var(--line); }
+.source-divider span { position: relative; padding: 0 10px; background: var(--paper); }
+.upload-label { margin: 0 0 8px; color: #5e716a; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; }
 .dropzone { min-height: 128px; padding: 18px 20px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 15px; border: 1.5px dashed #9db9af; border-radius: 13px; background: #f5faf7; transition: 160ms ease; }
 .dropzone:hover, .dropzone.dragging { border-color: var(--teal); background: #edf7f3; transform: translateY(-1px); }
 .dropzone input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }

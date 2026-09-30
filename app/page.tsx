@@ -24,6 +24,7 @@ import {
   getPersonDuties,
   parseScheduleRows,
 } from '@/lib/schedule';
+import bundledSchedules from '@/data/bundled-schedules.json';
 
 const weekdays = ['SÖN', 'MÅN', 'TIS', 'ONS', 'TOR', 'FRE', 'LÖR'];
 
@@ -58,6 +59,8 @@ export default function Home() {
   const [selectedCode, setSelectedCode] = useState('');
   const [roleFilter, setRoleFilter] = useState('all');
   const [fileName, setFileName] = useState('');
+  const [selectedMonthId, setSelectedMonthId] = useState('');
+  const [sourceType, setSourceType] = useState<'bundled' | 'upload' | ''>('');
   const [error, setError] = useState('');
   const [isParsing, setIsParsing] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -80,6 +83,14 @@ export default function Home() {
   const primaryCount = duties.filter((duty: any) => duty.role === 'primary').length;
   const backupCount = duties.filter((duty: any) => duty.role === 'backup').length;
   const selectedPerson = schedule?.people.find((person: any) => person.code === selectedCode);
+  const availablePeople = useMemo(
+    () => schedule
+      ? [...schedule.people]
+        .filter((person: any) => person.dutyCount > 0)
+        .sort((a: any, b: any) => a.name.localeCompare(b.name, 'sv') || a.code.localeCompare(b.code, 'sv'))
+      : [],
+    [schedule],
+  );
 
   const exampleDuties = [
     { date: '2026-10-02', department: 'Handkirurgi', role: 'primary', counterpartName: 'Gustav Andersson' },
@@ -113,15 +124,18 @@ export default function Home() {
         raw: true,
       }) as unknown[][];
       const parsed = parseScheduleRows(rows, file.name);
-      const firstWithDuty = parsed.people.find((person: any) => person.dutyCount > 0);
       setSchedule(parsed);
-      setSelectedCode(firstWithDuty?.code ?? parsed.people[0]?.code ?? '');
+      setSelectedCode('');
       setRoleFilter('all');
       setFileName(file.name);
+      setSelectedMonthId('');
+      setSourceType('upload');
     } catch (fileError) {
       setSchedule(null);
       setSelectedCode('');
       setFileName('');
+      setSelectedMonthId('');
+      setSourceType('');
       setError(fileError instanceof Error ? fileError.message : 'Filen kunde inte läsas.');
     } finally {
       setIsParsing(false);
@@ -129,10 +143,36 @@ export default function Home() {
     }
   }
 
-  function removeFile() {
+  function selectBundledMonth(monthId: string) {
+    setSelectedMonthId(monthId);
+    setError('');
+    setDownloaded(false);
+
+    if (!monthId) {
+      removeSchedule();
+      return;
+    }
+
+    const bundled = bundledSchedules.find((month) => month.id === monthId);
+    if (!bundled) {
+      setError('Det valda månadsschemat kunde inte läsas.');
+      return;
+    }
+
+    const names = new Map(bundled.people.map((person) => [person.code, person.name]));
+    setSchedule({ ...bundled, fileName: bundled.label, names });
+    setSelectedCode('');
+    setRoleFilter('all');
+    setFileName(bundled.label);
+    setSourceType('bundled');
+  }
+
+  function removeSchedule() {
     setSchedule(null);
     setSelectedCode('');
     setFileName('');
+    setSelectedMonthId('');
+    setSourceType('');
     setError('');
     setDownloaded(false);
   }
@@ -152,7 +192,7 @@ export default function Home() {
     setDownloaded(true);
   }
 
-  const currentStep = schedule ? 3 : 1;
+  const currentStep = schedule ? (selectedCode ? 3 : 2) : 1;
   const monthLabel = schedule
     ? `${SWEDISH_MONTHS[schedule.month].toLocaleUpperCase('sv-SE')} ${schedule.year}`
     : 'OKTOBER 2026';
@@ -166,7 +206,7 @@ export default function Home() {
         </a>
         <div className="privacy-chip">
           <ShieldCheck aria-hidden="true" />
-          Filen lämnar aldrig din enhet
+          Uppladdade filer stannar på din enhet
         </div>
       </header>
 
@@ -175,8 +215,8 @@ export default function Home() {
           <p className="eyebrow">Excel → kalender</p>
           <h1 id="page-title">Från jourschema till kalender på en minut.</h1>
           <p className="lead">
-            Ladda upp månadsschemat, välj en person och hämta alla relevanta
-            primär- och bakjourer som en färdig kalenderfil.
+            Välj ett färdigt månadsschema eller ladda upp Excel-filen, välj en person
+            och hämta jourerna som en färdig kalenderfil.
           </p>
         </section>
 
@@ -199,11 +239,31 @@ export default function Home() {
               <div className="section-heading">
                 <div>
                   <p className="step-label">Steg 1</p>
-                  <h2>Öppna Excel-schemat</h2>
+                  <h2>Välj månad eller ladda upp Excel-schemat</h2>
                 </div>
-                <span className="file-types">.xls · .xlsx</span>
+                <span className="file-types">MÅNAD / EXCEL</span>
               </div>
 
+              <Field className="field month-field">
+                <FieldLabel htmlFor="month-select">Välj färdigt schema</FieldLabel>
+                <NativeSelect
+                  id="month-select"
+                  value={selectedMonthId}
+                  onChange={(event) => selectBundledMonth(event.target.value)}
+                >
+                  <NativeSelectOption value="">Välj månad…</NativeSelectOption>
+                  {bundledSchedules.map((month) => (
+                    <NativeSelectOption key={month.id} value={month.id}>
+                      {month.label}
+                    </NativeSelectOption>
+                  ))}
+                </NativeSelect>
+                <small className="source-note">Innehåller bara namn och jourdata från kolumn E och F.</small>
+              </Field>
+
+              <div className="source-divider" aria-hidden="true"><span>eller</span></div>
+
+              <p className="upload-label">Ladda upp Excel-schemat</p>
               <label
                 className={`dropzone ${isDragging ? 'dragging' : ''}`}
                 htmlFor="schedule-file"
@@ -227,20 +287,20 @@ export default function Home() {
                   {isParsing ? <span className="spinner" /> : <Upload />}
                 </span>
                 <span className="drop-copy">
-                  <strong>{isParsing ? 'Läser schemat…' : schedule ? 'Öppna ett annat schema' : 'Släpp filen här'}</strong>
-                  <small>{schedule ? 'eller behåll det inlästa schemat nedan' : 'eller klicka för att välja från datorn'}</small>
+                  <strong>{isParsing ? 'Läser schemat…' : sourceType === 'upload' ? 'Öppna ett annat schema' : 'Släpp filen här'}</strong>
+                  <small>{sourceType === 'upload' ? 'eller behåll det inlästa schemat nedan' : 'eller klicka för att välja från datorn'}</small>
                 </span>
                 <span className="browse-button">Välj fil</span>
               </label>
 
               {schedule && (
                 <div className="file-state success-state" aria-live="polite">
-                  <FileSpreadsheet aria-hidden="true" />
+                  {sourceType === 'bundled' ? <CalendarCheck aria-hidden="true" /> : <FileSpreadsheet aria-hidden="true" />}
                   <span>
                     <strong>{fileName}</strong>
                     <small>{SWEDISH_MONTHS[schedule.month]} {schedule.year} · {schedule.entries.length} jourrader hittades</small>
                   </span>
-                  <button type="button" onClick={removeFile} aria-label="Ta bort vald fil"><X /></button>
+                  <button type="button" onClick={removeSchedule} aria-label="Rensa valt schema"><X /></button>
                 </div>
               )}
               {error && (
@@ -268,10 +328,11 @@ export default function Home() {
                     disabled={!schedule}
                     onChange={(event) => { setSelectedCode(event.target.value); setDownloaded(false); }}
                   >
-                    {!schedule && <NativeSelectOption value="">Ladda upp ett schema först</NativeSelectOption>}
-                    {schedule?.people.map((person: any) => (
+                    {!schedule && <NativeSelectOption value="">Välj månad eller ladda upp schema först</NativeSelectOption>}
+                    {schedule && <NativeSelectOption value="">Välj namn…</NativeSelectOption>}
+                    {availablePeople.map((person: any) => (
                       <NativeSelectOption key={person.code} value={person.code}>
-                        {person.name} ({person.code}) · {person.dutyCount} jourer
+                        {person.name} ({person.code}) · {person.dutyCount} {person.dutyCount === 1 ? 'jour' : 'jourer'}
                       </NativeSelectOption>
                     ))}
                   </NativeSelect>
@@ -321,7 +382,7 @@ export default function Home() {
                       ? duties.length
                         ? `${primaryCount} primär · ${backupCount} bakjour · heldagsaktiviteter`
                         : `${allDuties.length} jourer totalt för vald person`
-                      : 'Välj först en Excel-fil och en person.'}
+                      : 'Välj först en månad eller Excel-fil och sedan en person.'}
                   </small>
                 </span>
               </div>
@@ -388,7 +449,7 @@ export default function Home() {
 
       <footer>
         <span>Jourkalender</span>
-        <span>All bearbetning sker lokalt i webbläsaren.</span>
+        <span>Uppladdade Excel-filer bearbetas lokalt i webbläsaren.</span>
       </footer>
     </div>
   );

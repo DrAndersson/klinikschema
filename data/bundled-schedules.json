@@ -1,0 +1,1546 @@
+[
+  {
+    "id": "2026-09",
+    "label": "September 2026",
+    "month": 9,
+    "year": 2026,
+    "entries": [
+      {
+        "day": 1,
+        "date": "2026-09-01",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "PN"
+      },
+      {
+        "day": 1,
+        "date": "2026-09-01",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 2,
+        "date": "2026-09-02",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 2,
+        "date": "2026-09-02",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 3,
+        "date": "2026-09-03",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "BB"
+      },
+      {
+        "day": 3,
+        "date": "2026-09-03",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 4,
+        "date": "2026-09-04",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PN"
+      },
+      {
+        "day": 4,
+        "date": "2026-09-04",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 5,
+        "date": "2026-09-05",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PN"
+      },
+      {
+        "day": 5,
+        "date": "2026-09-05",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 6,
+        "date": "2026-09-06",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PN"
+      },
+      {
+        "day": 6,
+        "date": "2026-09-06",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 7,
+        "date": "2026-09-07",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "BB"
+      },
+      {
+        "day": 7,
+        "date": "2026-09-07",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 8,
+        "date": "2026-09-08",
+        "department": "Handkirurgi",
+        "primaryCode": "PJ",
+        "backupCode": null
+      },
+      {
+        "day": 8,
+        "date": "2026-09-08",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 9,
+        "date": "2026-09-09",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 9,
+        "date": "2026-09-09",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 10,
+        "date": "2026-09-10",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 10,
+        "date": "2026-09-10",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 11,
+        "date": "2026-09-11",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 11,
+        "date": "2026-09-11",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 12,
+        "date": "2026-09-12",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 12,
+        "date": "2026-09-12",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 13,
+        "date": "2026-09-13",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 13,
+        "date": "2026-09-13",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 14,
+        "date": "2026-09-14",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 14,
+        "date": "2026-09-14",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 15,
+        "date": "2026-09-15",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 15,
+        "date": "2026-09-15",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 16,
+        "date": "2026-09-16",
+        "department": "Handkirurgi",
+        "primaryCode": "PJ",
+        "backupCode": null
+      },
+      {
+        "day": 16,
+        "date": "2026-09-16",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 17,
+        "date": "2026-09-17",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "IB"
+      },
+      {
+        "day": 17,
+        "date": "2026-09-17",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 18,
+        "date": "2026-09-18",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "GA"
+      },
+      {
+        "day": 18,
+        "date": "2026-09-18",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 19,
+        "date": "2026-09-19",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "GA"
+      },
+      {
+        "day": 19,
+        "date": "2026-09-19",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 20,
+        "date": "2026-09-20",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "GA"
+      },
+      {
+        "day": 20,
+        "date": "2026-09-20",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 21,
+        "date": "2026-09-21",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "CL"
+      },
+      {
+        "day": 21,
+        "date": "2026-09-21",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 22,
+        "date": "2026-09-22",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 22,
+        "date": "2026-09-22",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 23,
+        "date": "2026-09-23",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "BB"
+      },
+      {
+        "day": 23,
+        "date": "2026-09-23",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 24,
+        "date": "2026-09-24",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 24,
+        "date": "2026-09-24",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 25,
+        "date": "2026-09-25",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "BB"
+      },
+      {
+        "day": 25,
+        "date": "2026-09-25",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 26,
+        "date": "2026-09-26",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "BB"
+      },
+      {
+        "day": 26,
+        "date": "2026-09-26",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 27,
+        "date": "2026-09-27",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "BB"
+      },
+      {
+        "day": 27,
+        "date": "2026-09-27",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 28,
+        "date": "2026-09-28",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 28,
+        "date": "2026-09-28",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 29,
+        "date": "2026-09-29",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "PN"
+      },
+      {
+        "day": 29,
+        "date": "2026-09-29",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 30,
+        "date": "2026-09-30",
+        "department": "Handkirurgi",
+        "primaryCode": "IB",
+        "backupCode": null
+      },
+      {
+        "day": 30,
+        "date": "2026-09-30",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      }
+    ],
+    "people": [
+      {
+        "code": "AK",
+        "name": "Amar Karalija",
+        "dutyCount": 6
+      },
+      {
+        "code": "BB",
+        "name": "Bitte Bergström",
+        "dutyCount": 6
+      },
+      {
+        "code": "CM",
+        "name": "Camilla Mukka",
+        "dutyCount": 5
+      },
+      {
+        "code": "CL",
+        "name": "Christina Ljungberg",
+        "dutyCount": 1
+      },
+      {
+        "code": "GA",
+        "name": "Gustav Andersson",
+        "dutyCount": 6
+      },
+      {
+        "code": "IB",
+        "name": "Izabela Blaszczyk",
+        "dutyCount": 6
+      },
+      {
+        "code": "JC",
+        "name": "Jenny Cajander",
+        "dutyCount": 5
+      },
+      {
+        "code": "JL",
+        "name": "Joakim Lundberg",
+        "dutyCount": 7
+      },
+      {
+        "code": "KA",
+        "name": "Karin Adamo",
+        "dutyCount": 3
+      },
+      {
+        "code": "MA",
+        "name": "Magnus Andersson",
+        "dutyCount": 3
+      },
+      {
+        "code": "OB",
+        "name": "Olof Backman",
+        "dutyCount": 7
+      },
+      {
+        "code": "PJ",
+        "name": "Per Jenmalm",
+        "dutyCount": 6
+      },
+      {
+        "code": "PN",
+        "name": "Per Nordmark",
+        "dutyCount": 5
+      },
+      {
+        "code": "RW",
+        "name": "Rebecka Wiberg",
+        "dutyCount": 6
+      },
+      {
+        "code": "SP",
+        "name": "Simona Prokopovic",
+        "dutyCount": 5
+      },
+      {
+        "code": "SS",
+        "name": "Staffan Svenlin",
+        "dutyCount": 7
+      }
+    ]
+  },
+  {
+    "id": "2026-10",
+    "label": "Oktober 2026",
+    "month": 10,
+    "year": 2026,
+    "entries": [
+      {
+        "day": 1,
+        "date": "2026-10-01",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "CL"
+      },
+      {
+        "day": 1,
+        "date": "2026-10-01",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 2,
+        "date": "2026-10-02",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "GA"
+      },
+      {
+        "day": 2,
+        "date": "2026-10-02",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 3,
+        "date": "2026-10-03",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "GA"
+      },
+      {
+        "day": 3,
+        "date": "2026-10-03",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 4,
+        "date": "2026-10-04",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "GA"
+      },
+      {
+        "day": 4,
+        "date": "2026-10-04",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 5,
+        "date": "2026-10-05",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "BB"
+      },
+      {
+        "day": 5,
+        "date": "2026-10-05",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 6,
+        "date": "2026-10-06",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "GA"
+      },
+      {
+        "day": 6,
+        "date": "2026-10-06",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 7,
+        "date": "2026-10-07",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "BB"
+      },
+      {
+        "day": 7,
+        "date": "2026-10-07",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 8,
+        "date": "2026-10-08",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 8,
+        "date": "2026-10-08",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 9,
+        "date": "2026-10-09",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "PN"
+      },
+      {
+        "day": 9,
+        "date": "2026-10-09",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 10,
+        "date": "2026-10-10",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "PN"
+      },
+      {
+        "day": 10,
+        "date": "2026-10-10",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 11,
+        "date": "2026-10-11",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "PN"
+      },
+      {
+        "day": 11,
+        "date": "2026-10-11",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 12,
+        "date": "2026-10-12",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "IB"
+      },
+      {
+        "day": 12,
+        "date": "2026-10-12",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 13,
+        "date": "2026-10-13",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "GA"
+      },
+      {
+        "day": 13,
+        "date": "2026-10-13",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 14,
+        "date": "2026-10-14",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "BB"
+      },
+      {
+        "day": 14,
+        "date": "2026-10-14",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 15,
+        "date": "2026-10-15",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 15,
+        "date": "2026-10-15",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 16,
+        "date": "2026-10-16",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 16,
+        "date": "2026-10-16",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 17,
+        "date": "2026-10-17",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 17,
+        "date": "2026-10-17",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 18,
+        "date": "2026-10-18",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 18,
+        "date": "2026-10-18",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 19,
+        "date": "2026-10-19",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "IB"
+      },
+      {
+        "day": 19,
+        "date": "2026-10-19",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 20,
+        "date": "2026-10-20",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "PN"
+      },
+      {
+        "day": 20,
+        "date": "2026-10-20",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 21,
+        "date": "2026-10-21",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 21,
+        "date": "2026-10-21",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 22,
+        "date": "2026-10-22",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "BB"
+      },
+      {
+        "day": 22,
+        "date": "2026-10-22",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 23,
+        "date": "2026-10-23",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "BB"
+      },
+      {
+        "day": 23,
+        "date": "2026-10-23",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 24,
+        "date": "2026-10-24",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 24,
+        "date": "2026-10-24",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 25,
+        "date": "2026-10-25",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 25,
+        "date": "2026-10-25",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 26,
+        "date": "2026-10-26",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "GA"
+      },
+      {
+        "day": 26,
+        "date": "2026-10-26",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 27,
+        "date": "2026-10-27",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 27,
+        "date": "2026-10-27",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 28,
+        "date": "2026-10-28",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "IB"
+      },
+      {
+        "day": 28,
+        "date": "2026-10-28",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 29,
+        "date": "2026-10-29",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 29,
+        "date": "2026-10-29",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 30,
+        "date": "2026-10-30",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 30,
+        "date": "2026-10-30",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 31,
+        "date": "2026-10-31",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 31,
+        "date": "2026-10-31",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      }
+    ],
+    "people": [
+      {
+        "code": "AK",
+        "name": "Amar Karalija",
+        "dutyCount": 5
+      },
+      {
+        "code": "BB",
+        "name": "Bitte Bergström",
+        "dutyCount": 5
+      },
+      {
+        "code": "CM",
+        "name": "Camilla Mukka",
+        "dutyCount": 5
+      },
+      {
+        "code": "CL",
+        "name": "Christina Ljungberg",
+        "dutyCount": 1
+      },
+      {
+        "code": "GA",
+        "name": "Gustav Andersson",
+        "dutyCount": 8
+      },
+      {
+        "code": "IB",
+        "name": "Izabela Blaszczyk",
+        "dutyCount": 6
+      },
+      {
+        "code": "JC",
+        "name": "Jenny Cajander",
+        "dutyCount": 5
+      },
+      {
+        "code": "JL",
+        "name": "Joakim Lundberg",
+        "dutyCount": 11
+      },
+      {
+        "code": "KA",
+        "name": "Karin Adamo",
+        "dutyCount": 6
+      },
+      {
+        "code": "MA",
+        "name": "Magnus Andersson",
+        "dutyCount": 5
+      },
+      {
+        "code": "OB",
+        "name": "Olof Backman",
+        "dutyCount": 6
+      },
+      {
+        "code": "PJ",
+        "name": "Per Jenmalm",
+        "dutyCount": 7
+      },
+      {
+        "code": "PN",
+        "name": "Per Nordmark",
+        "dutyCount": 4
+      },
+      {
+        "code": "RW",
+        "name": "Rebecka Wiberg",
+        "dutyCount": 4
+      },
+      {
+        "code": "SP",
+        "name": "Simona Prokopovic",
+        "dutyCount": 6
+      },
+      {
+        "code": "SS",
+        "name": "Staffan Svenlin",
+        "dutyCount": 7
+      }
+    ]
+  },
+  {
+    "id": "2026-11",
+    "label": "November 2026",
+    "month": 11,
+    "year": 2026,
+    "entries": [
+      {
+        "day": 1,
+        "date": "2026-11-01",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 1,
+        "date": "2026-11-01",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 2,
+        "date": "2026-11-02",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "BB"
+      },
+      {
+        "day": 2,
+        "date": "2026-11-02",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 3,
+        "date": "2026-11-03",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PN"
+      },
+      {
+        "day": 3,
+        "date": "2026-11-03",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 4,
+        "date": "2026-11-04",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 4,
+        "date": "2026-11-04",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 5,
+        "date": "2026-11-05",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "BB"
+      },
+      {
+        "day": 5,
+        "date": "2026-11-05",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 6,
+        "date": "2026-11-06",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 6,
+        "date": "2026-11-06",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 7,
+        "date": "2026-11-07",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 7,
+        "date": "2026-11-07",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 8,
+        "date": "2026-11-08",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "IB"
+      },
+      {
+        "day": 8,
+        "date": "2026-11-08",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 9,
+        "date": "2026-11-09",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "IB"
+      },
+      {
+        "day": 9,
+        "date": "2026-11-09",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 10,
+        "date": "2026-11-10",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 10,
+        "date": "2026-11-10",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 11,
+        "date": "2026-11-11",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 11,
+        "date": "2026-11-11",
+        "department": "Plastikkirurgi",
+        "primaryCode": "IH",
+        "backupCode": null
+      },
+      {
+        "day": 12,
+        "date": "2026-11-12",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "GA"
+      },
+      {
+        "day": 12,
+        "date": "2026-11-12",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 13,
+        "date": "2026-11-13",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 13,
+        "date": "2026-11-13",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 14,
+        "date": "2026-11-14",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 14,
+        "date": "2026-11-14",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 15,
+        "date": "2026-11-15",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 15,
+        "date": "2026-11-15",
+        "department": "Plastikkirurgi",
+        "primaryCode": "MA",
+        "backupCode": null
+      },
+      {
+        "day": 16,
+        "date": "2026-11-16",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "BB"
+      },
+      {
+        "day": 16,
+        "date": "2026-11-16",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 17,
+        "date": "2026-11-17",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 17,
+        "date": "2026-11-17",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 18,
+        "date": "2026-11-18",
+        "department": "Handkirurgi",
+        "primaryCode": "JL",
+        "backupCode": "GA"
+      },
+      {
+        "day": 18,
+        "date": "2026-11-18",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 19,
+        "date": "2026-11-19",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "PJ"
+      },
+      {
+        "day": 19,
+        "date": "2026-11-19",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 20,
+        "date": "2026-11-20",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "PN"
+      },
+      {
+        "day": 20,
+        "date": "2026-11-20",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 21,
+        "date": "2026-11-21",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "PN"
+      },
+      {
+        "day": 21,
+        "date": "2026-11-21",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 22,
+        "date": "2026-11-22",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "PN"
+      },
+      {
+        "day": 22,
+        "date": "2026-11-22",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 23,
+        "date": "2026-11-23",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "BB"
+      },
+      {
+        "day": 23,
+        "date": "2026-11-23",
+        "department": "Plastikkirurgi",
+        "primaryCode": "JC",
+        "backupCode": null
+      },
+      {
+        "day": 24,
+        "date": "2026-11-24",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 24,
+        "date": "2026-11-24",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      },
+      {
+        "day": 25,
+        "date": "2026-11-25",
+        "department": "Handkirurgi",
+        "primaryCode": "SS",
+        "backupCode": "IB"
+      },
+      {
+        "day": 25,
+        "date": "2026-11-25",
+        "department": "Plastikkirurgi",
+        "primaryCode": "AK",
+        "backupCode": null
+      },
+      {
+        "day": 26,
+        "date": "2026-11-26",
+        "department": "Handkirurgi",
+        "primaryCode": "GA",
+        "backupCode": null
+      },
+      {
+        "day": 26,
+        "date": "2026-11-26",
+        "department": "Plastikkirurgi",
+        "primaryCode": "KA",
+        "backupCode": null
+      },
+      {
+        "day": 27,
+        "date": "2026-11-27",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "BB"
+      },
+      {
+        "day": 27,
+        "date": "2026-11-27",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 28,
+        "date": "2026-11-28",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "BB"
+      },
+      {
+        "day": 28,
+        "date": "2026-11-28",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 29,
+        "date": "2026-11-29",
+        "department": "Handkirurgi",
+        "primaryCode": "SP",
+        "backupCode": "BB"
+      },
+      {
+        "day": 29,
+        "date": "2026-11-29",
+        "department": "Plastikkirurgi",
+        "primaryCode": "RW",
+        "backupCode": null
+      },
+      {
+        "day": 30,
+        "date": "2026-11-30",
+        "department": "Handkirurgi",
+        "primaryCode": "CM",
+        "backupCode": "IB"
+      },
+      {
+        "day": 30,
+        "date": "2026-11-30",
+        "department": "Plastikkirurgi",
+        "primaryCode": "OB",
+        "backupCode": null
+      }
+    ],
+    "people": [
+      {
+        "code": "AK",
+        "name": "Amar Karalija",
+        "dutyCount": 6
+      },
+      {
+        "code": "BB",
+        "name": "Bitte Bergström",
+        "dutyCount": 7
+      },
+      {
+        "code": "CM",
+        "name": "Camilla Mukka",
+        "dutyCount": 6
+      },
+      {
+        "code": "GA",
+        "name": "Gustav Andersson",
+        "dutyCount": 7
+      },
+      {
+        "code": "IH",
+        "name": "Ida Hansdotter",
+        "dutyCount": 1
+      },
+      {
+        "code": "IB",
+        "name": "Izabela Blaszczyk",
+        "dutyCount": 6
+      },
+      {
+        "code": "JC",
+        "name": "Jenny Cajander",
+        "dutyCount": 2
+      },
+      {
+        "code": "JL",
+        "name": "Joakim Lundberg",
+        "dutyCount": 6
+      },
+      {
+        "code": "KA",
+        "name": "Karin Adamo",
+        "dutyCount": 5
+      },
+      {
+        "code": "MA",
+        "name": "Magnus Andersson",
+        "dutyCount": 4
+      },
+      {
+        "code": "OB",
+        "name": "Olof Backman",
+        "dutyCount": 7
+      },
+      {
+        "code": "PJ",
+        "name": "Per Jenmalm",
+        "dutyCount": 6
+      },
+      {
+        "code": "PN",
+        "name": "Per Nordmark",
+        "dutyCount": 4
+      },
+      {
+        "code": "RW",
+        "name": "Rebecka Wiberg",
+        "dutyCount": 5
+      },
+      {
+        "code": "SP",
+        "name": "Simona Prokopovic",
+        "dutyCount": 6
+      },
+      {
+        "code": "SS",
+        "name": "Staffan Svenlin",
+        "dutyCount": 7
+      }
+    ]
+  }
+]

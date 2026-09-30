@@ -10,6 +10,10 @@ import {
   parseScheduleRows,
 } from '../lib/schedule.js';
 
+const bundledSchedules = JSON.parse(
+  fs.readFileSync(new URL('../data/bundled-schedules.json', import.meta.url), 'utf8'),
+);
+
 function fixtureRows() {
   return [
     [null, null, 'oktober', null, null, 2026],
@@ -64,6 +68,36 @@ test('creates all-day calendar events with role and counterpart', () => {
 
   for (const line of ics.split('\r\n')) {
     assert.ok(new TextEncoder().encode(line).length <= 75, `ICS line exceeds 75 bytes: ${line}`);
+  }
+});
+
+test('bundled month schedules contain only the public duty data needed by the app', () => {
+  assert.deepEqual(bundledSchedules.map(({ id }) => id), ['2026-09', '2026-10', '2026-11']);
+  assert.deepEqual(bundledSchedules.map(({ entries }) => entries.length), [60, 62, 60]);
+
+  for (const bundled of bundledSchedules) {
+    assert.deepEqual(
+      Object.keys(bundled).sort(),
+      ['entries', 'id', 'label', 'month', 'people', 'year'],
+    );
+
+    const schedule = {
+      ...bundled,
+      names: new Map(bundled.people.map(({ code, name }) => [code, name])),
+    };
+
+    for (const entry of bundled.entries) {
+      assert.deepEqual(
+        Object.keys(entry).sort(),
+        ['backupCode', 'date', 'day', 'department', 'primaryCode'],
+      );
+      assert.ok(schedule.names.has(entry.primaryCode));
+      if (entry.backupCode) assert.ok(schedule.names.has(entry.backupCode));
+    }
+
+    for (const person of bundled.people) {
+      assert.equal(getPersonDuties(schedule, person.code, 'all').length, person.dutyCount);
+    }
   }
 });
 

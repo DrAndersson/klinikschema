@@ -1,7 +1,8 @@
 # Jourkalender
 
-Jourkalender är en webbaserad konverterare för klinikens månadsschema. Appen läser
-`.xls` och `.xlsx` direkt i webbläsaren och skapar en `.ics`-fil för vald person.
+Jourkalender är en webbaserad konverterare för klinikens månadsschema. Användaren
+kan välja ett färdigt månadsschema eller läsa en egen `.xls`/`.xlsx` direkt i
+webbläsaren och skapa en `.ics`-fil för vald person.
 
 ## Tolkning av schemat
 
@@ -31,6 +32,16 @@ pnpm run build
 
 Excel-filen skickas inte till någon server. All tolkning sker lokalt på användarens
 enhet.
+
+## Uppdatera de färdiga månadsschemana
+
+```bash
+pnpm generate:schedules -- "/sökväg/till/Scheman"
+```
+
+Kommandot skapar `data/bundled-schedules.json`. Den publika filen innehåller bara
+månad, jourdatum, hand/plast, initialer och namn för personer med jour. De kompletta
+Excel-filerna, telefonnummer och övrig bemanning läggs inte i GitHub-repot.
 
 ## Publicering
 
